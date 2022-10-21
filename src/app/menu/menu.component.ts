@@ -10,11 +10,11 @@ export class MenuComponent implements OnInit {
 
   listSection: Section[] = [
     {
-      "title": "map", 
+      "title": "Map", 
       "url": ""
     },
     {
-      "title": "Objets iot", 
+      "title": "Objets IOT", 
       "url": "/object-iot"
     }
   ]

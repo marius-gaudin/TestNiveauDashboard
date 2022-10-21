@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ObjectIotService } from '../services/object-iot.service';
 
 @Component({
@@ -28,7 +29,7 @@ export class CreateObjectComponent implements OnInit {
     return this.objectForm.get('range');
   }
 
-  constructor(private fb: FormBuilder, private objectIotService: ObjectIotService) {
+  constructor(private fb: FormBuilder, private objectIotService: ObjectIotService, private router: Router) {
     this.objectForm = this.fb.group({
       name: ['', [Validators.required]],
       latitude: ['', [Validators.required]],
@@ -48,6 +49,7 @@ export class CreateObjectComponent implements OnInit {
       range: this.range?.value,
       id: ''
     });
+    this.router.navigateByUrl('/object-iot');
   }
 
 }

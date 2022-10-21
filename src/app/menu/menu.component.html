@@ -1,7 +1,7 @@
 <div>
     <ul>
-        <li *ngFor="let section of listSection">
-            <a [href]="section.url">{{ section.title }}</a>
+        <li *ngFor="let section of listSection" [routerLink]="section.url">
+            {{ section.title }}
         </li>
     </ul>
 </div>
