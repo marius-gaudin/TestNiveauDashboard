@@ -1,0 +1,18 @@
+<form [formGroup]="signUpForm">
+    <div>
+        <label>Email</label>
+        <input type="email" formControlName="email">
+    </div>
+
+    <div>
+        <label>Mot de passe</label>
+        <input type="password" formControlName="password">
+    </div>
+
+    <div>
+        <label>Confirmation Mot de passe</label>
+        <input type="password" formControlName="confirmPassword">
+    </div>
+
+    <input type="submit" value="S'inscrire">
+</form>

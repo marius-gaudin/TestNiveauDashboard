@@ -1,0 +1,21 @@
+<button>Ajouter</button>
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Range</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let object of listObject">
+            <td>{{object.name}}</td>
+            <td>{{object.latitude}}</td>
+            <td>{{object.longitude}}</td>
+            <td>{{object.range}}</td>
+            <td><button>Supprimer</button></td>
+        </tr>
+    </tbody>
+</table>

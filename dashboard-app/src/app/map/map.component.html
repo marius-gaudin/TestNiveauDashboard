@@ -1,0 +1,3 @@
+<agm-map [latitude]="defaultLatMap" [longitude]="defaultLongMap" [zoom]="defaultZoomMap">
+    <agm-marker *ngFor="let object of listObject" [latitude]="object.latitude" [longitude]="object.longitude" [label]="object.name"></agm-marker>
+</agm-map>
