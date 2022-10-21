@@ -17,12 +17,7 @@ export class MapComponent implements OnInit {
   listObject: ObjectIot[];
 
   constructor(private objectIotService: ObjectIotService) {
-    this.listObject = [];
-    this.objectIotService.getAll().subscribe(documents=>{
-      documents.docs.forEach(document => {
-        this.listObject.push(document.data());
-      });
-    });
+    this.listObject = this.objectIotService.getAll();
   }
 
   ngOnInit(): void {

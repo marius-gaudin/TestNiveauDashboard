@@ -1,0 +1,28 @@
+<form [formGroup]="objectForm" (ngSubmit)="objectForm.valid ? create() : showErrors = true;">
+    <div>
+        <p *ngIf="showErrors && longitude?.errors?.['required']">Champ requis</p>
+        <label>Nom de l'Objet</label>
+        <input type="text" formControlName="name">
+    </div>
+
+    <div>
+        <p *ngIf="showErrors && longitude?.errors?.['required']">Champ requis</p>
+        <label>Latitude</label>
+        <input type="number" formControlName="latitude">
+    </div>
+
+    <div>
+        <p *ngIf="showErrors && longitude?.errors?.['required']">Champ requis</p>
+        <label>Longitude</label>
+        <input type="number" formControlName="longitude">
+    </div>
+
+    <div>
+        <p *ngIf="showErrors && longitude?.errors?.['required']">Champ requis</p>
+        <label>Portée</label>
+        <input type="number" formControlName="range">
+    </div>
+
+    <button formAction="submit">Créer</button>
+</form>
+

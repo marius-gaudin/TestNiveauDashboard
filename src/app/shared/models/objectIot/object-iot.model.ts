@@ -3,4 +3,5 @@ export class ObjectIot {
     longitude!: number;
     name!: string;
     range!: number;
+    id!: string;
 }

@@ -15,11 +15,23 @@ export class ObjectIotService {
     this.objectIotRef = db.collection(this.pathObjectIot);
   }
 
-  getAll(): Observable<QuerySnapshot<ObjectIot>> {
-    return this.objectIotRef.get();
+  getAll(): ObjectIot[] {
+    let listObject: ObjectIot[] = [];
+    this.objectIotRef.get().subscribe(documents=>{
+      documents.docs.forEach(document => {
+        let doc = document.data();
+        doc.id = document.id;
+        listObject.push(doc);
+      });
+    });
+    return listObject;
   }
 
   create(object: ObjectIot) {
     return this.objectIotRef.add({...object});
+  }
+
+  delete(id: string): Promise<void> {
+    return this.objectIotRef.doc(id).delete();
   }
 }

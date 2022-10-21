@@ -12,13 +12,15 @@ export class ObjectIotComponent implements OnInit {
   listObject: ObjectIot[];
 
   constructor(private objectIotService: ObjectIotService) {
-    this.listObject = [];
-    this.objectIotService.getAll().subscribe(documents=>{
-      documents.docs.forEach(document => {
-        this.listObject.push(document.data());
-      });
-    });
-   }
+    this.listObject = this.objectIotService.getAll();
+  }
+
+  delete(id: string) {
+    if(id != '' && confirm("Are you sure to delete")) {
+      this.objectIotService.delete(id);
+      this.listObject = this.objectIotService.getAll();
+    }
+  }
 
   ngOnInit(): void {
   }

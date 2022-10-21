@@ -14,6 +14,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
+import { CreateObjectComponent } from './create-object/create-object.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AgmCoreModule } from '@agm/core';
     AdminComponent,
     ObjectIotComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    CreateObjectComponent
   ],
   imports: [
     BrowserModule,

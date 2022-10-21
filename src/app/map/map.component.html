@@ -1,3 +1,8 @@
 <agm-map [latitude]="defaultLatMap" [longitude]="defaultLongMap" [zoom]="defaultZoomMap">
-    <agm-marker *ngFor="let object of listObject" [latitude]="object.latitude" [longitude]="object.longitude" [label]="object.name"></agm-marker>
+    <agm-marker *ngFor="let object of listObject" [latitude]="object.latitude" [longitude]="object.longitude" [label]="object.name">
+        <agm-info-window>
+            <strong>{{object.latitude}}, {{object.longitude}}</strong>
+        </agm-info-window>
+    </agm-marker>
+    <agm-circle *ngFor="let object of listObject" [latitude]="object.latitude" [longitude]="object.longitude" [fillColor]="'red'" [radius]="object.range"></agm-circle>
 </agm-map>

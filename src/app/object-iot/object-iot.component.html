@@ -1,4 +1,4 @@
-<button>Ajouter</button>
+<a href="/object-iot/create">Ajouter</a>
 <table>
     <thead>
         <tr>
@@ -15,7 +15,7 @@
             <td>{{object.latitude}}</td>
             <td>{{object.longitude}}</td>
             <td>{{object.range}}</td>
-            <td><button>Supprimer</button></td>
+            <td><button (click)="delete(object.id)">Supprimer</button></td>
         </tr>
     </tbody>
 </table>
